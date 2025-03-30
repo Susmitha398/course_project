@@ -75,17 +75,20 @@ const Courses = () => {
   useEffect(()=> {
     const getAllPublishedCourse = async ()=> {
       try {
-        const res = await axios.get(`https://lms-nswg.onrender.com/api/v1/course/published-courses`, {withCredentials:true})
+        const res = await axios.get(`${import.meta.env.VITE_API_URL}/course/published-courses`, {withCredentials:true})
         if(res.data.success){
           dispatch(setCourse(res.data.courses))
         }
+
+        console.log({res:res.data});
+        
       } catch (error) {
         console.log(error);
         
       }
     }
     getAllPublishedCourse()
-  })
+  }, [])
   return (
     <div className='bg-gray-100 pt-14'>
       <div className='min-h-screen max-w-7xl mx-auto py-10'>
