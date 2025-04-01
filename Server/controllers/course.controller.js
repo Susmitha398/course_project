@@ -105,6 +105,15 @@ export const getCourseLecture = async (req, res) => {
     }
 };
 
+export const editLecture = async (req, res) => {
+    try {
+        console.log(req.body);
+    } catch (error) {
+        console.error("Error in editLecture:", error);
+        return res.status(500).json({ message: "Failed to update lecture" });
+    }
+}
+
 export const removeLecture = async (req, res) => {
     try {
         const { lectureId } = req.params;

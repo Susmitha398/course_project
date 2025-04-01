@@ -43,3 +43,5 @@ app.listen(PORT, ()=>{
     console.log(`Server listen at port ${PORT}`);
     
 })
+
+// http://localhost:3000/api/v1/course/published-courses
